@@ -10,9 +10,15 @@ public:
     void fetchFrameAndTransform();
 
     cv::Mat rawWebcamFrame;
+    cv::Mat warpedFrame;
     cv::Mat tvImage;
+
+    int fourByThreeFrames = 0;
+    int twentyOneByNineFrames = 0;
+
 private:
     void fetchFrame();
+    void detectAndTrimBlackBoxes();
 
     cv::Mat perspectiveTransformMatrix;
     cv::VideoCapture cap;

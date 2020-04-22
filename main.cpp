@@ -46,6 +46,12 @@ int main(int argc, char *argv[]) {
         bool performDebugPrints = (frameCounter % 200) == 0;
         if (performDebugPrints) {
             std::cout << "Average frame time (ms): " << (totalFrameTime / 200.0) << std::endl;
+            if (webcamFetcher.fourByThreeFrames > 200) {
+                std::cout << "[x] 4:3 mode\n";
+            }
+            if (webcamFetcher.twentyOneByNineFrames > 200) {
+                std::cout << "[x] 21:9 mode\n";
+            }
             cv::imwrite("snapshot.jpg", webcamFetcher.rawWebcamFrame);
             cv::imwrite("warped.jpg", webcamFetcher.tvImage);
 

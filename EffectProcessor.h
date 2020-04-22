@@ -61,7 +61,7 @@ EffectProcessor<HEIGHT, WIDTH>::EffectProcessor(huestream::HueStreamPtr huestrea
 }
 
 
-#define AVERAGE_WINDOW_SIZE_MS 500.0
+#define AVERAGE_WINDOW_SIZE_MS 300.0
 double movingAverage(double oldValue, double newValue, unsigned long long sampleInterval) {
     // Calculates the exponentially damped moving average based on the old value, the new value and
     // the time elapsed between their calculation.
